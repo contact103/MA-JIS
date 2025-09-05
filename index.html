@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>아늑 2.1 Night Care - Coming Soon</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", sans-serif;
+      background: linear-gradient(135deg, #f2e9e4, #e07a5f);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      color: #444;
+    }
+    .countdown {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      color: #b76e79;
+    }
+    .email-box {
+      margin-top: 1rem;
+    }
+    input[type="email"] {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 250px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin-left: 10px;
+      background: #e07a5f;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+    }
+    .social {
+      margin-top: 2rem;
+    }
+    .social a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      color: #222;
+    }
+  </style>
+</head>
+<body>
+  <h1>곧, 당신의 밤이 달라집니다</h1>
+  <h2>아늑 2.1 Night Care<br>Coming Soon</h2>
+  
+  <div class="countdown" id="countdown">D-30</div>
+
+  <p>런칭 알림을 받고 싶다면 이메일을 남겨주세요.</p>
+  <div class="email-box">
+    <input type="email" placeholder="이메일 주소 입력">
+    <button>알림 신청</button>
+  </div>
+
+  <div class="social">
+    <a href="https://instagram.com/" target="_blank">Instagram</a>
+    <a href="https://tiktok.com/" target="_blank">TikTok</a>
+    <a href="mailto:contact@anouk.kr">Email</a>
+  </div>
+
+  <script>
+    // 단순 카운트다운 예시 (30일 후로 설정)
+    const countdownEl = document.getElementById("countdown");
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 30);
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = targetDate - now;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      countdownEl.innerText = "D-" + days;
+    }
+
+    setInterval(updateCountdown, 1000 * 60 * 60); // 매시간 업데이트
+    updateCountdown();
+  </script>
+</body>
+</html>
